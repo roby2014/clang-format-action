@@ -1,6 +1,7 @@
 # Auto clang format Github action
 
-Allow running `clang-format` on C/C++ sources every push using Github actions.
+Allow running `clang-format` on C/C++ sources every push using Github actions. A `.clang-format` file is required.
+
 ## Usage
 
 `.github/workflows/formatter.yml`:
