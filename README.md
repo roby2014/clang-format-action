@@ -1,14 +1,9 @@
-# Clang format Github action
+# Auto clang format Github action
 
-This project can be used to run clang-format on every push using Github actions. Uses Microsoft codestyle by default.
-
+Allow running `clang-format` on C/C++ sources every push using Github actions.
 ## Usage
 
-For a more detailed installation guide look [there](https://github.com/MarvinJWendt/run-node-formatter/wiki)
-
-Create a `formatter.yml` file in `.github/workflows/`.
-Paste this code into the file:
-
+`.github/workflows/formatter.yml`:
 ```yml
 on: push
 name: clang-format Code Formatter
@@ -18,7 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clang Code Formatter
-      uses: ivanludvig/clang-format-action@v1.4
+      uses: roby2014/clang-format-action@v1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USER_EMAIL: clang@format.com
+        GITHUB_USER_NAME: auto formatter
 ```

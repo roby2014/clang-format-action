@@ -1,5 +1,3 @@
-FROM ubuntu:disco
-
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y \
@@ -14,8 +12,6 @@ RUN wget "https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.0/
     cp -R * /usr/local
 
 COPY LICENSE README.md /
-
-COPY .clang-format /.clang-format
 
 COPY entrypoint.sh /entrypoint.sh
 
