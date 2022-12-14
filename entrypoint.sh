@@ -21,8 +21,8 @@ echo "### Branch: $BRANCH (ref: $GITHUB_REF )"
 git checkout $BRANCH
 
 echo "## Configuring git author..."
-git config --global user.email $GITHUB_USER_EMAIL
-git config --global user.name $GITHUB_USER_NAME
+git config --global user.email "clang@format.com"
+git config --global user.name "auto code formatter"
 
 # Ignore workflow files (we may not touch them)
 git update-index --assume-unchanged .github/workflows/*

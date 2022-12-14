@@ -17,6 +17,4 @@ jobs:
       uses: roby2014/clang-format-action@v1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_USER_EMAIL: clang@format.com
-        GITHUB_USER_NAME: auto formatter
 ```
