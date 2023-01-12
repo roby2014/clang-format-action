@@ -1,8 +1,13 @@
 # Auto clang format Github action
 
-Allow running `clang-format` on C/C++ sources every push using Github actions. A `.clang-format` file is required.
+Allow running `clang-format` on C/C++ sources using Github actions. A `.clang-format` file is required.
+
+## Info
+  - `exclude-regex` can be used to avoid formatting certain folders.
 
 ## Usage
+
+This action will run this action on every push, formatting all C/C++ files except the ones from `lib/` folder):
 
 `.github/workflows/formatter.yml`:
 ```yml
@@ -20,5 +25,3 @@ jobs:
       with:
         exclude-regex: 'lib/' #optional
 ```
-
-`exclude-regex` can be used to avoid formatting certain folders.
