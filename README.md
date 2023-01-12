@@ -17,4 +17,8 @@ jobs:
       uses: roby2014/clang-format-action@v1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        EXCLUDE_REGEX: 'lib/' #optional
 ```
+
+`EXCLUDE_REGEX` can be used to avoid formatting certain folders.
