@@ -18,7 +18,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        EXCLUDE_REGEX: 'lib/' #optional
+        exclude-regex: 'lib/' #optional
 ```
 
-`EXCLUDE_REGEX` can be used to avoid formatting certain folders.
+`exclude-regex` can be used to avoid formatting certain folders.
