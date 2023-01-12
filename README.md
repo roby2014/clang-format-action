@@ -3,6 +3,7 @@
 Allow running `clang-format` on C/C++ sources using Github actions. A `.clang-format` file is required.
 
 ## Info
+  - `BRANCH` (environment variable) branch where the formatter will be run.
   - `exclude-regex` can be used to avoid formatting certain folders.
 
 ## Usage
@@ -21,6 +22,7 @@ jobs:
     - name: Clang Code Formatter
       uses: roby2014/clang-format-action@v1.0
       env:
+        BRANCH: 'main'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         exclude-regex: 'lib/' #optional
