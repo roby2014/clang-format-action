@@ -2,6 +2,13 @@
 
 set -eu
 
+EXCLUDE_REGEX="$1"
+
+# Set the regex to an empty string regex if nothing was provided
+if [[ -z $EXCLUDE_REGEX ]]; then
+	EXCLUDE_REGEX="^$"
+fi
+
 REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 
 echo "## Initializing git repo..."
@@ -28,7 +35,7 @@ git config --global user.name "auto code formatter"
 git update-index --assume-unchanged .github/workflows/*
 
 echo "## Running clang-format on C/C++ source"
-SRC=$(git ls-tree --full-tree -r HEAD | grep -e "\.\(c\|h\|hpp\|cpp\)\$" | cut -f 2)
+SRC=$(git ls-tree --full-tree -r HEAD | grep -e "\.\(c\|h\|hpp\|cpp\)\$" | cut -f 2 | grep -v $EXCLUDE_REGEX)
 
 clang-format -style=file -i $SRC
 
